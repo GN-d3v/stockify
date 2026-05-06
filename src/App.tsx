@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import { Dashboard } from './pages/Dashboard';
 import { Inventario } from './pages/Inventario';
@@ -13,7 +13,7 @@ import { SearchProvider } from './context/SearchContext';
 function App() {
   return (
     <SearchProvider>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Dashboard />} />
@@ -26,7 +26,7 @@ function App() {
             <Route path="impostazioni" element={<Impostazioni />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </SearchProvider>
   );
 }
